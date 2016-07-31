@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 
 OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:spotify] = OmniAuth::AuthHash.new({ 'provider' => 'spotify', 'info' => {'display_name' => 'Fake User', 'id' => '12345'}})
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
